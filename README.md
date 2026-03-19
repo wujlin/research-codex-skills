@@ -48,6 +48,10 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 
 After installation, restart Codex to load new skills.
 
+## Publishing updates
+
+For the promotion path from a project-local draft skill to this repository and then to `~/.codex/skills`, see [RELEASE_WORKFLOW.md](RELEASE_WORKFLOW.md).
+
 ## Maintenance rule
 
 Project repositories can contain draft or incubating skills. Only move a skill into this repository after it is:
