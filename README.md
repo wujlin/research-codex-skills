@@ -48,6 +48,49 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 
 After installation, restart Codex to load new skills.
 
+## WSL quick start
+
+If you are using Codex inside WSL, the smoothest setup is:
+
+1. Make sure `python` is available inside WSL.
+2. Install the skill directly from GitHub into the WSL-side `~/.codex/skills`.
+3. Restart Codex inside WSL.
+
+Example:
+
+```bash
+python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo wujlin/research-codex-skills \
+  --path skills/research-writing-and-figures
+```
+
+```bash
+python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo wujlin/research-codex-skills \
+  --path skills/research-experiment-ops
+```
+
+This installs the skills into the Linux/WSL home directory, not the Windows user profile.
+
+## System notes
+
+### macOS / Linux / WSL
+
+- The commands above should work directly.
+- `~/.codex/skills` is the normal installation location.
+
+### Windows native
+
+- The skill repository is still usable, but your Codex installation path may differ.
+- You may need to adjust the path that points to the built-in installer script.
+- If possible, prefer WSL over Windows-native shell for the smoothest experience.
+
+### Important boundary
+
+- This repository is cross-device and cross-project.
+- Do not store machine-specific passwords, tokens, or private local paths here.
+- Keep `~/.codex/skills` as the installed copy, not the development copy.
+
 ## Publishing updates
 
 For the promotion path from a project-local draft skill to this repository and then to `~/.codex/skills`, see [RELEASE_WORKFLOW.md](RELEASE_WORKFLOW.md).
