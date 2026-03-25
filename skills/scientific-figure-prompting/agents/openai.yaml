@@ -1,0 +1,7 @@
+interface:
+  display_name: "Scientific Figure Prompting"
+  short_description: "Write publication-grade prompts for research figures"
+  default_prompt: "Use $scientific-figure-prompting to turn my method into a publication-quality framework diagram prompt."
+
+policy:
+  allow_implicit_invocation: true

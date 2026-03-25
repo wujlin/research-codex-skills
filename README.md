@@ -30,6 +30,12 @@ skills/
   - manuscript-readiness checks
   - `git worktree` usage for parallel task streams
 
+- `scientific-figure-prompting`
+  - publication-grade research figure prompting
+  - framework diagram and architecture panel prompts
+  - graphical abstract and benchmark overview prompts
+  - structured negative prompts and label-space control
+
 ## Installation
 
 Install a skill into `~/.codex/skills` with the built-in installer:
@@ -44,6 +50,12 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo wujlin/research-codex-skills \
   --path skills/research-experiment-ops
+```
+
+```bash
+python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo wujlin/research-codex-skills \
+  --path skills/scientific-figure-prompting
 ```
 
 After installation, restart Codex to load new skills.
@@ -68,6 +80,12 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo wujlin/research-codex-skills \
   --path skills/research-experiment-ops
+```
+
+```bash
+python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo wujlin/research-codex-skills \
+  --path skills/scientific-figure-prompting
 ```
 
 This installs the skills into the Linux/WSL home directory, not the Windows user profile.
