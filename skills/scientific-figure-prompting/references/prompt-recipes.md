@@ -135,6 +135,88 @@ If a prompt feels weak, fix it in this order:
 4. Cut text-rendering demands and move labels to blank strips.
 5. Strengthen the negative prompt so the output does not drift into clipart or UI.
 
+## Revising an already generated figure
+
+When a draft image already exists, do not default to a fresh full prompt. Prefer a targeted edit prompt that behaves like annotated revision notes.
+
+### Core rule
+
+Switch from "describe the ideal image" to "mark what is wrong and how to fix it."
+
+### Default structure for edit prompts
+
+Write the prompt in this order:
+
+1. What must stay unchanged
+2. Exact text corrections
+3. Layout adjustments
+4. Hard limits
+
+### What works best
+
+- Start by freezing the approved structure: "keep the current four-stage horizontal layout" or "do not redraw the whole composition"
+- Separate text corrections from layout changes
+- Write text fixes as exact replacements: "change X to Y", not "improve wording"
+- Point out semantic mistakes explicitly: if the figure highlights buildings rather than residents, say so and state the corrected wording
+- Compress error-prone labels into short tags of 2 to 5 words
+- Limit each round to roughly 5 to 8 must-fix items instead of rewriting everything at once
+
+### Hard limits that reduce repeated failures
+
+Use explicit prohibitions when the model keeps overproducing text or redesigning the panel:
+
+- do not add long sentences
+- do not add bullet lists
+- do not change the overall layout
+- if text cannot be rendered accurately, leave it blank
+
+For text-heavy stages, redirect the model toward graphics:
+
+- use icons, arrows, or heat highlights instead of explanatory sentences
+
+### Chinese for local corrections
+
+For local editing of existing images, Chinese often works better than English, especially when the goal is:
+
+- correcting wrong words or garbled text
+- fixing semantic mismatches in labels
+- adjusting local spacing, size, or placement
+
+Use short, direct Chinese instructions for replacement and deletion. Keep the wording operational rather than descriptive.
+
+### Reusable edit template
+
+```text
+基于当前这张图做局部修改，不要重画整体结构，保留现有布局。
+
+必须修改的文字：
+1. 把“X”改成“Y”
+2. 删除“Z”
+3. 这句话语义不对，因为[原因]，改成“[...]”
+
+版式调整：
+1. 放大[模块]
+2. 删除[空白框/多余元素]
+3. 用图标、箭头或高亮代替说明文字
+
+限制：
+- 不要新增长句
+- 不要新增 bullet list
+- 不要改变整体布局
+- 如果文字不能准确渲染，就留空
+```
+
+### Practical revision loop
+
+Use this loop for iterative image repair:
+
+1. State what remains unchanged.
+2. List 5 to 8 must-fix items.
+3. Write every text fix as an exact replacement.
+4. List layout fixes separately.
+5. Add explicit prohibitions against long text, gibberish, extra explanations, or layout redesign.
+6. After the next image returns, run another local correction round instead of restarting with a new full prompt.
+
 ## Compact example
 
 Use this pattern for a remote-sensing framework panel:
