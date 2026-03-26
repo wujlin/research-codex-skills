@@ -1,0 +1,7 @@
+interface:
+  display_name: "WSA Remote Ops"
+  short_description: "Connect to the WSA server and inspect remote projects"
+  default_prompt: "Use $wsa-remote-ops to inspect a project under /home/jinlin/projects on the WSA server."
+
+policy:
+  allow_implicit_invocation: true

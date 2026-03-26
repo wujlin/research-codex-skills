@@ -12,6 +12,7 @@ skills/
     SKILL.md
     agents/openai.yaml
     references/
+    scripts/   # optional
 ```
 
 ## Current skills
@@ -36,6 +37,12 @@ skills/
   - graphical abstract and benchmark overview prompts
   - structured negative prompts and label-space control
 
+- `wsa-remote-ops`
+  - SSH access to the WSA server
+  - remote project inspection under `/home/jinlin/projects`
+  - standardized `sshpass` workflow
+  - default preference for the WSA `dpl` environment
+
 ## Installation
 
 Install a skill into `~/.codex/skills` with the built-in installer:
@@ -56,6 +63,12 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo wujlin/research-codex-skills \
   --path skills/scientific-figure-prompting
+```
+
+```bash
+python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo wujlin/research-codex-skills \
+  --path skills/wsa-remote-ops
 ```
 
 After installation, restart Codex to load new skills.
@@ -86,6 +99,12 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo wujlin/research-codex-skills \
   --path skills/scientific-figure-prompting
+```
+
+```bash
+python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo wujlin/research-codex-skills \
+  --path skills/wsa-remote-ops
 ```
 
 This installs the skills into the Linux/WSL home directory, not the Windows user profile.
