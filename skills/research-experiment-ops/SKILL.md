@@ -1,6 +1,6 @@
 ---
 name: research-experiment-ops
-description: Use when planning, running, naming, logging, checking, syncing, or organizing research experiments across local and remote environments. This skill standardizes run directories, required artifacts, dataset registration, remote sync habits, manuscript-readiness checks, and worktree-based parallel development.
+description: Use when planning, running, naming, logging, checking, syncing, or organizing research experiments across local and remote environments. This skill standardizes run directories, required artifacts, dataset registration, remote sync habits, WSA-first resource planning, manuscript-readiness checks, and worktree-based parallel development.
 ---
 
 # Research Experiment Ops
@@ -20,8 +20,9 @@ Use this skill when the task involves any of the following:
 1. Define the experiment unit: what question this run answers and what output directory should represent it.
 2. Freeze the run structure before launching: logs, metrics, checkpoints, and summary files.
 3. Treat large datasets and remote paths as registered assets, not as implicit tribal knowledge.
-4. Before a result enters the manuscript, check artifact completeness and figure-text consistency.
-5. Use worktrees to isolate task streams, not to multiply confusion.
+4. Choose the compute venue explicitly: use WSA as the default heavy-compute target and budget around roughly `128 GB` RAM, up to `48` CPU workers, and one `48 GB` GPU unless project docs say otherwise.
+5. Before a result enters the manuscript, check artifact completeness and figure-text consistency.
+6. Use worktrees to isolate task streams, not to multiply confusion.
 
 ## Reference map
 
@@ -35,6 +36,7 @@ Use this skill when the task involves any of the following:
 
 - If the user is about to launch or rename an experiment, load `run-structure.md` first.
 - If the task involves a workstation, SSH, rsync, or pulling outputs back to local, load `remote-and-sync.md` first.
+- If the task involves heavy preprocessing, long runs, large batches, or expensive evaluation, default to WSA-scale settings instead of laptop-scale settings.
 - If the user is dealing with large datasets or sample/full-data relationships, load `data-registry.md` first.
 - If the user wants to know whether a result can be cited, plotted, or turned into a table, load `manuscript-readiness.md` first.
 - If the user wants to parallelize work across branches or tasks, load `worktree-usage.md` first.
@@ -45,3 +47,4 @@ Use this skill when the task involves any of the following:
 - Prefer explicit file expectations over implied conventions.
 - Never store secrets such as passwords inside the skill or dataset registry.
 - Distinguish exploratory results from frozen, citable results.
+- When compute settings matter, state the chosen worker count, memory assumption, and GPU usage explicitly.
