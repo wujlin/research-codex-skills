@@ -135,6 +135,24 @@ If a prompt feels weak, fix it in this order:
 4. Cut text-rendering demands and move labels to blank strips.
 5. Strengthen the negative prompt so the output does not drift into clipart or UI.
 
+## Multi-panel label placement
+
+If a figure contains panel letters such as `(a)`, `(b)`, `(c)`, and `(d)`, treat their placement as part of the layout spec rather than an afterthought.
+
+Use these rules:
+
+- keep all panel letters on the same left-side x anchor across panels
+- align that x anchor with the y-axis-title anchor or the reserved y-label margin
+- keep the letter outside the main plotting marks when possible
+- keep clear separation from plot titles, legends, tick labels, and inset elements
+- do not let panel letters drift independently from panel to panel
+
+Useful phrasing:
+
+- "place panel letters on a shared left anchor aligned with the y-axis-title margin"
+- "keep `(a)`, `(b)`, `(c)`, `(d)` clear of legends and plotted marks"
+- "do not let panel labels overlap titles, y-axis labels, or inset annotations"
+
 ## Revising an already generated figure
 
 When a draft image already exists, do not default to a fresh full prompt. Prefer a targeted edit prompt that behaves like annotated revision notes.

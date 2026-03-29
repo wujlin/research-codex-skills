@@ -1,6 +1,6 @@
 ---
 name: wsa-remote-ops
-description: Use when the user asks to connect to the WSA server over SSH, inspect or operate on /home/jinlin/projects, run remote commands on 10.13.12.164, sync/check files on that machine, or choose the default Python environment there. This skill standardizes the working SSH path, the required password env var, the local OrbStack SOCKS proxy requirement at 127.0.0.1:1080, the preferred WSA environment `dpl`, and the first commands to use so agents do not waste time rediscovering proxy, authentication, and environment details.
+description: Use when the user asks to connect to the WSA server over SSH, inspect or operate on /home/jinlin/projects, run remote commands on 10.13.12.164, sync/check files on that machine, or choose the default Python environment there. This skill standardizes the working SSH path, the required password env var, the local OrbStack SOCKS proxy requirement at 127.0.0.1:1080, the preferred WSA environment `dpl`, the machine's rough compute profile (128 GB RAM, 48-way CPU parallelism, 48 GB GPU), and the first commands to use so agents do not waste time rediscovering proxy, authentication, and environment details.
 ---
 
 # WSA Remote Ops
@@ -23,6 +23,8 @@ Use this skill when the task involves any of the following:
 6. If SSH fails before the password prompt, first check whether `127.0.0.1:1080` is listening; do not assume the password or server is wrong.
 7. For discovery tasks, start with a shallow listing of `~/projects` before diving into one repo.
 8. If Python work requires an environment on WSA, prefer the `dpl` environment by default unless the project documentation explicitly says otherwise.
+9. Treat WSA as the default heavy-compute target: plan around roughly `128 GB` RAM, up to `48` CPU workers for parallel preprocessing, and one `48 GB` GPU for CUDA workloads.
+10. Do not default to laptop-scale worker counts on WSA. Choose resource-aware settings and state them explicitly.
 
 ## Task routing
 
@@ -30,6 +32,9 @@ Use this skill when the task involves any of the following:
 - For an interactive shell, run `scripts/run_wsa_ssh.sh` with no arguments.
 - For project discovery, first run `ls -la ~/projects` and then `find ~/projects -maxdepth 2 -mindepth 1 -type d | sort`.
 - If Python, pip, notebook, or experiment commands are needed on WSA, activate `dpl` first unless a project-specific override is documented.
+- If the task is CPU-bound preprocessing, consider scaling workers toward the machine limit instead of staying at conservative defaults; use a lower value only when I/O, dataset size, or library behavior justifies it.
+- If the task is memory-heavy, budget explicitly against the machine's `128 GB` RAM instead of assuming a small workstation.
+- If the task is GPU-bound, size batch, model, or shard settings against the available `48 GB` VRAM.
 - If SSH dies before the password phase, run `lsof -iTCP:1080 -sTCP:LISTEN -n -P` first and confirm OrbStack is providing the local proxy.
 - If the host alias fails after the proxy check, inspect `~/.ssh/config` before trying alternate connection methods.
 
@@ -39,4 +44,5 @@ Use this skill when the task involves any of the following:
 - Keep directory listings shallow unless the user asks for a deeper tree.
 - Do not repeat the password in output.
 - If a remote command depends on Python packages, state whether it was run inside `dpl`.
+- If compute settings matter, report the chosen worker count, memory assumptions, or GPU usage rather than leaving them implicit.
 - If SSH fails, report whether the local proxy at `127.0.0.1:1080` was listening.

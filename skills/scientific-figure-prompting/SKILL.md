@@ -23,6 +23,7 @@ Use this skill when the task involves any of the following:
 5. Reserve clean space for labels to be added later; do not rely on the image model to render readable paragraphs, equations, or dense legends.
 6. Keep the visual tone publication-grade: light background, restrained palette, crisp geometry, mild depth, and technically credible structure.
 7. If the figure already exists, do not default to a full regeneration prompt; write a targeted edit prompt that preserves the approved structure and lists only the must-fix changes.
+8. If the figure includes panel letters such as `(a)`, `(b)`, `(c)`, or `(d)`, specify a stable panel-label anchor: keep the letter x-position aligned with the y-axis-title anchor or left label margin, and keep it clear of titles, legends, ticks, and plotted marks.
 
 ## Reference map
 
@@ -43,3 +44,4 @@ Use this skill when the task involves any of the following:
 - Prefer scientific infographic language over cinematic or concept-art language.
 - Keep text inside the image minimal and assume final annotations will be added manually.
 - For local corrections, state what must stay unchanged first, then list exact text replacements, layout fixes, and explicit prohibitions.
+- For multi-panel plots with lettered subpanels, keep panel letters on a shared left anchor that matches the y-axis-title margin instead of letting them float into the plotting area.
