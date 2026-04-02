@@ -25,6 +25,8 @@ Avoid these failure modes:
 - validation loops that merely prove the method “works”
 - defensive wording that anticipates criticism instead of presenting evidence
 - stuffing implementation details into the main argument layer
+- thread-like writing that mixes several ideas before the reader knows the main point
+- renaming the same object across sections and forcing the reader to re-map terms
 
 ## Section roles
 

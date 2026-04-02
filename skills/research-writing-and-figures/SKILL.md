@@ -17,10 +17,11 @@ Use this skill when the task involves any of the following:
 ## Core workflow
 
 1. Identify the question the current section or figure is supposed to answer.
-2. Separate background, design, evidence, and interpretation; do not mix them by default.
-3. Keep each paragraph focused on one function and each panel responsible for distinct information.
-4. Check terminology against the actual implementation and experiment design before polishing wording.
-5. Prefer concise, problem-driven writing and restrained figure design over decorative emphasis.
+2. Lead with the main point early and unfold the logic linearly; do not braid multiple threads into one paragraph by default.
+3. Separate background, design, evidence, and interpretation; do not mix them by default.
+4. Keep each paragraph focused on one function and each panel responsible for distinct information.
+5. Check terminology against the actual implementation and experiment design before polishing wording.
+6. Prefer concise, problem-driven writing and restrained figure design over decorative emphasis.
 
 ## Reference map
 
@@ -37,6 +38,7 @@ Use this skill when the task involves any of the following:
 ## Output defaults
 
 - Keep revisions concise and claim-driven.
+- Lead with the point, then add one layer at a time.
 - Let captions explain how to read the figure; keep interpretation in the main text.
 - Prefer one clear term per concept unless distinctions are explicit and necessary.
 - When converting research writing into presentation language, simplify wording but preserve the scientific point.
