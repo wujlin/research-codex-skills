@@ -1,0 +1,7 @@
+interface:
+  display_name: "Scientific Module Iconography"
+  short_description: "Design icon systems for research figure modules"
+  default_prompt: "Use $scientific-module-iconography to redesign the icons and model blocks in my scientific framework figure."
+
+policy:
+  allow_implicit_invocation: true

@@ -2,7 +2,7 @@
 
 Personal Codex skills for research workflows.
 
-This repository stores stable, reusable skills that can be shared across projects and devices. It is intended to be the source-of-truth repository for skills that have already been generalized and stripped of project-specific secrets.
+This repository stores stable skills for cross-project reuse, plus a small number of intentionally maintained private registry skills that are machine-specific but still safe to version because they contain no credentials or secrets.
 
 ## Repository structure
 
@@ -37,11 +37,23 @@ skills/
   - graphical abstract and benchmark overview prompts
   - structured negative prompts and label-space control
 
+- `scientific-module-iconography`
+  - scientific icon taxonomy for framework figures
+  - pseudo-3D and isometric module language
+  - local edit patterns for weak or flat model stages
+  - visual object grammar for data, modules, states, and outputs
+
 - `wsa-remote-ops`
   - SSH access to the WSA server
   - remote project inspection under `/home/jinlin/projects`
   - standardized `sshpass` workflow
   - default preference for the WSA `dpl` environment
+
+- `project-path-registry`
+  - local project roots and common subdirectories
+  - WSA project roots and global data roots
+  - local-versus-WSA name mapping
+  - fast lookup for project, dataset, output, and document paths
 
 ## Installation
 
@@ -69,6 +81,18 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo wujlin/research-codex-skills \
   --path skills/wsa-remote-ops
+```
+
+```bash
+python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo wujlin/research-codex-skills \
+  --path skills/scientific-module-iconography
+```
+
+```bash
+python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo wujlin/research-codex-skills \
+  --path skills/project-path-registry
 ```
 
 After installation, restart Codex to load new skills.
@@ -107,6 +131,18 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
   --path skills/wsa-remote-ops
 ```
 
+```bash
+python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo wujlin/research-codex-skills \
+  --path skills/scientific-module-iconography
+```
+
+```bash
+python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo wujlin/research-codex-skills \
+  --path skills/project-path-registry
+```
+
 This installs the skills into the Linux/WSL home directory, not the Windows user profile.
 
 ## System notes
@@ -125,7 +161,8 @@ This installs the skills into the Linux/WSL home directory, not the Windows user
 ### Important boundary
 
 - This repository is cross-device and cross-project.
-- Do not store machine-specific passwords, tokens, or private local paths here.
+- Do not store passwords, tokens, SSH secrets, or other credentials here.
+- Private machine-specific path registries are acceptable only when they contain no secrets and are intentionally maintained as part of this personal repository.
 - Keep `~/.codex/skills` as the installed copy, not the development copy.
 
 ## Publishing updates
@@ -139,3 +176,7 @@ Project repositories can contain draft or incubating skills. Only move a skill i
 - reusable across projects
 - stripped of secrets and local-only credentials
 - structurally stable enough to serve as a long-term reference
+
+Exception:
+
+- a private registry skill may live here even if it is machine-specific, as long as it contains no secrets and is useful as stable infrastructure across sessions and devices

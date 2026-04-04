@@ -1,0 +1,7 @@
+interface:
+  display_name: "Project Path Registry"
+  short_description: "Look up project roots and data paths on Mac and WSA"
+  default_prompt: "Use $project-path-registry to find the local and WSA paths for one of my research projects."
+
+policy:
+  allow_implicit_invocation: true
