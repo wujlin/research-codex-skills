@@ -1,0 +1,7 @@
+interface:
+  display_name: "MinerU PDF Ops"
+  short_description: "Run the WSA-based MinerU PDF extraction workflow"
+  default_prompt: "Use $mineru-pdf-ops to parse PDFs with MinerU on WSA and sync the results back to my local project."
+
+policy:
+  allow_implicit_invocation: true

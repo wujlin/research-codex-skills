@@ -20,7 +20,7 @@ Use this skill when the task involves any of the following:
 1. Define the experiment unit: what question this run answers and what output directory should represent it.
 2. Freeze the run structure before launching: logs, metrics, checkpoints, and summary files.
 3. Treat large datasets and remote paths as registered assets, not as implicit tribal knowledge.
-4. Choose the compute venue explicitly: use WSA as the default heavy-compute target and budget around roughly `128 GB` RAM, up to `48` CPU workers, and one `48 GB` GPU unless project docs say otherwise.
+4. Choose the compute venue explicitly: use WSA as the default heavy-compute target, and delegate SSH, proxy, environment, and machine-profile details to `wsa-remote-ops` rather than duplicating them here.
 5. Before a result enters the manuscript, check artifact completeness and figure-text consistency.
 6. Use worktrees to isolate task streams, not to multiply confusion.
 
@@ -35,8 +35,10 @@ Use this skill when the task involves any of the following:
 ## Task routing
 
 - If the user is about to launch or rename an experiment, load `run-structure.md` first.
+- If the user first needs to find project roots, dataset paths, or local-versus-remote path pairs, use `project-path-registry`.
 - If the task involves a workstation, SSH, rsync, or pulling outputs back to local, load `remote-and-sync.md` first.
 - If the task involves heavy preprocessing, long runs, large batches, or expensive evaluation, default to WSA-scale settings instead of laptop-scale settings.
+- If the task needs actual WSA connection setup, password handling, proxy checks, or remote Python activation, use `wsa-remote-ops` alongside this skill.
 - If the user is dealing with large datasets or sample/full-data relationships, load `data-registry.md` first.
 - If the user wants to know whether a result can be cited, plotted, or turned into a table, load `manuscript-readiness.md` first.
 - If the user wants to parallelize work across branches or tasks, load `worktree-usage.md` first.

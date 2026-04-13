@@ -39,6 +39,11 @@ Use this skill when the task is primarily about reading or validating a figure r
 - Figure style rules: [../research-writing-and-figures/references/visual-style.md](../research-writing-and-figures/references/visual-style.md)
 - Workflow norms: [../research-writing-and-figures/references/workflow.md](../research-writing-and-figures/references/workflow.md)
 
+## Boundary
+
+- If the user only wants caption wording polished and no image check is required, use `research-writing`.
+- If the task also requires rewriting manuscript text based on the figure reading, coordinate through `research-writing-and-figures`.
+
 ## Output defaults
 
 - Explain what each panel shows before interpreting why it matters.

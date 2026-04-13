@@ -1,7 +1,7 @@
 interface:
   display_name: "Research Writing & Figures"
-  short_description: "Revise papers, captions, and scientific visuals"
-  default_prompt: "Use $research-writing-and-figures to revise a manuscript section and align its figures and captions."
+  short_description: "Route tasks that need both figure reading and scientific writing"
+  default_prompt: "Use $research-writing-and-figures to coordinate a manuscript rewrite that depends directly on reading the figure panels."
 
 policy:
   allow_implicit_invocation: true

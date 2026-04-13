@@ -13,7 +13,7 @@ Use this skill when the task is primarily about scientific text rather than figu
 - tightening the logic of a study guide, reading note, or research digest
 - converting technical content into linear explanatory notes
 - checking terminology, abbreviations, assumptions, and section roles
-- rewriting captions only when the task is mainly textual rather than visual
+- rewriting captions only when the task is mainly textual and does not require reopening the figure image
 
 ## Core workflow
 
@@ -29,6 +29,11 @@ Use this skill when the task is primarily about scientific text rather than figu
 
 - Writing rules: [../research-writing-and-figures/references/writing.md](../research-writing-and-figures/references/writing.md)
 - Workflow norms: [../research-writing-and-figures/references/workflow.md](../research-writing-and-figures/references/workflow.md)
+
+## Boundary
+
+- If caption wording depends on checking visible panels, symbols, or layout, use `research-figure-analysis` first.
+- If the task genuinely couples manuscript revision with figure reading, use `research-writing-and-figures`.
 
 ## Output defaults
 

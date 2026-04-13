@@ -1,11 +1,12 @@
 ---
 name: research-writing-and-figures
-description: Use when a task genuinely spans both scientific writing and figure interpretation or requires caption-text alignment across a research project. Prefer `research-writing` for manuscript and digest text, and prefer `research-figure-analysis` for PDF figure extraction, panel-level explanation, and caption auditing.
+description: Use when a task genuinely spans both scientific writing and figure interpretation and you need to coordinate `research-writing` with `research-figure-analysis`. This is a router skill, not the default for pure writing or pure figure tasks.
 ---
 
-# Research Writing And Figures
+# Research Writing And Figures Router
 
 Use this skill only when the task truly couples manuscript writing and figure work.
+It is a routing layer, not a separate full workflow that replaces the two underlying skills.
 
 ## Routing
 

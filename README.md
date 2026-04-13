@@ -17,14 +17,28 @@ skills/
 
 ## Current skills
 
+The repository is organized into five layers so skills do not all try to solve the same problem:
+
+### 1. Execution mode
+
 - `autonomous-skill`
   - long-running, multi-session execution with task decomposition and continuation prompts
+
+### 2. Infrastructure
 
 - `project-path-registry`
   - local project roots and common subdirectories
   - WSA project roots and global data roots
   - local-versus-WSA name mapping
   - fast lookup for project, dataset, output, and document paths
+
+- `wsa-remote-ops`
+  - generic SSH access to the WSA server
+  - remote project inspection under `/home/jinlin/projects`
+  - standardized proxy, password, and environment conventions
+  - default WSA machine profile for remote compute planning
+
+### 3. Project workflows
 
 - `research-experiment-ops`
   - experiment naming and output structure
@@ -34,19 +48,34 @@ skills/
   - manuscript-readiness checks
   - `git worktree` usage for parallel task streams
 
-- `research-figure-analysis`
-  - PDF figure extraction
-  - panel-by-panel reading and caption alignment
-  - figure-text consistency checks for research notes and manuscripts
+- `mineru-pdf-ops`
+  - MinerU deployment and repair on WSA
+  - WSA-side MinerU API startup and validation
+  - local-to-WSA PDF extraction and sync-back workflow for `Research_Collector`
+  - optional post-processing of returned MinerU image assets
+
+- `youtube-lecture-digest`
+  - YouTube research lecture transcription and transcript cleanup
+  - curated slide extraction and cleanup
+  - Chinese integrated lecture notes and final self-check
+
+### 4. Content analysis and writing
 
 - `research-writing`
   - scientific manuscript drafting and revision
   - linear exposition and terminology control
   - low-redundancy research notes and digest writing
 
+- `research-figure-analysis`
+  - PDF figure extraction
+  - panel-by-panel reading and caption alignment
+  - figure-text consistency checks for research notes and manuscripts
+
 - `research-writing-and-figures`
-  - use when writing and figure interpretation need to be handled together
-  - shared routing layer between `research-writing` and `research-figure-analysis`
+  - router skill for tasks that need both `research-writing` and `research-figure-analysis`
+  - use only when figure reading directly drives the text revision
+
+### 5. Figure generation and visual language
 
 - `scientific-figure-prompting`
   - publication-grade research figure prompting
@@ -59,18 +88,6 @@ skills/
   - pseudo-3D and isometric module language
   - local edit patterns for weak or flat model stages
   - visual object grammar for data, modules, states, and outputs
-
-- `wsa-remote-ops`
-  - SSH access to the WSA server
-  - remote project inspection under `/home/jinlin/projects`
-  - standardized proxy, password, and environment conventions
-  - WSA-side MinerU PDF extraction workflow for `Research_Collector`
-  - MinerU workflow lives in `skills/wsa-remote-ops/SKILL.md`, section `## MinerU on WSA`
-
-- `youtube-lecture-digest`
-  - YouTube research lecture transcription and transcript cleanup
-  - curated slide extraction and cleanup
-  - Chinese integrated lecture notes and final self-check
 
 ## Installation
 
@@ -85,6 +102,7 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
 Available `<skill-name>` values in this repository:
 
 - `autonomous-skill`
+- `mineru-pdf-ops`
 - `project-path-registry`
 - `research-experiment-ops`
 - `research-figure-analysis`
