@@ -17,11 +17,14 @@ skills/
 
 ## Current skills
 
-- `research-writing-and-figures`
-  - scientific manuscript revision
-  - caption and figure-text alignment
-  - restrained academic figure style
-  - research-to-presentation language conversion
+- `autonomous-skill`
+  - long-running, multi-session execution with task decomposition and continuation prompts
+
+- `project-path-registry`
+  - local project roots and common subdirectories
+  - WSA project roots and global data roots
+  - local-versus-WSA name mapping
+  - fast lookup for project, dataset, output, and document paths
 
 - `research-experiment-ops`
   - experiment naming and output structure
@@ -30,6 +33,20 @@ skills/
   - dataset registration
   - manuscript-readiness checks
   - `git worktree` usage for parallel task streams
+
+- `research-figure-analysis`
+  - PDF figure extraction
+  - panel-by-panel reading and caption alignment
+  - figure-text consistency checks for research notes and manuscripts
+
+- `research-writing`
+  - scientific manuscript drafting and revision
+  - linear exposition and terminology control
+  - low-redundancy research notes and digest writing
+
+- `research-writing-and-figures`
+  - use when writing and figure interpretation need to be handled together
+  - shared routing layer between `research-writing` and `research-figure-analysis`
 
 - `scientific-figure-prompting`
   - publication-grade research figure prompting
@@ -46,14 +63,14 @@ skills/
 - `wsa-remote-ops`
   - SSH access to the WSA server
   - remote project inspection under `/home/jinlin/projects`
-  - standardized `sshpass` workflow
-  - default preference for the WSA `dpl` environment
+  - standardized proxy, password, and environment conventions
+  - WSA-side MinerU PDF extraction workflow for `Research_Collector`
+  - MinerU workflow lives in `skills/wsa-remote-ops/SKILL.md`, section `## MinerU on WSA`
 
-- `project-path-registry`
-  - local project roots and common subdirectories
-  - WSA project roots and global data roots
-  - local-versus-WSA name mapping
-  - fast lookup for project, dataset, output, and document paths
+- `youtube-lecture-digest`
+  - YouTube research lecture transcription and transcript cleanup
+  - curated slide extraction and cleanup
+  - Chinese integrated lecture notes and final self-check
 
 ## Installation
 
@@ -62,37 +79,28 @@ Install a skill into `~/.codex/skills` with the built-in installer:
 ```bash
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo wujlin/research-codex-skills \
-  --path skills/research-writing-and-figures
+  --path skills/<skill-name>
 ```
 
-```bash
-python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo wujlin/research-codex-skills \
-  --path skills/research-experiment-ops
-```
+Available `<skill-name>` values in this repository:
 
-```bash
-python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo wujlin/research-codex-skills \
-  --path skills/scientific-figure-prompting
-```
+- `autonomous-skill`
+- `project-path-registry`
+- `research-experiment-ops`
+- `research-figure-analysis`
+- `research-writing`
+- `research-writing-and-figures`
+- `scientific-figure-prompting`
+- `scientific-module-iconography`
+- `wsa-remote-ops`
+- `youtube-lecture-digest`
+
+Example:
 
 ```bash
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo wujlin/research-codex-skills \
   --path skills/wsa-remote-ops
-```
-
-```bash
-python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo wujlin/research-codex-skills \
-  --path skills/scientific-module-iconography
-```
-
-```bash
-python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo wujlin/research-codex-skills \
-  --path skills/project-path-registry
 ```
 
 After installation, restart Codex to load new skills.
@@ -110,37 +118,7 @@ Example:
 ```bash
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo wujlin/research-codex-skills \
-  --path skills/research-writing-and-figures
-```
-
-```bash
-python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo wujlin/research-codex-skills \
-  --path skills/research-experiment-ops
-```
-
-```bash
-python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo wujlin/research-codex-skills \
-  --path skills/scientific-figure-prompting
-```
-
-```bash
-python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo wujlin/research-codex-skills \
   --path skills/wsa-remote-ops
-```
-
-```bash
-python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo wujlin/research-codex-skills \
-  --path skills/scientific-module-iconography
-```
-
-```bash
-python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo wujlin/research-codex-skills \
-  --path skills/project-path-registry
 ```
 
 This installs the skills into the Linux/WSL home directory, not the Windows user profile.
