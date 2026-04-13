@@ -73,6 +73,12 @@ Use this file for macOS-side paths.
 - repo: yes
 - notes: shared cross-project skill repository; do not put machine-specific paths here
 
+### Research_Collector
+
+- root: `/Users/jinlin/Desktop/Project/Research_Collector`
+- repo: yes
+- notes: cloned from `https://github.com/wujlin/Research_Collector.git`; currently empty remote with no commits yet
+
 ### explainable_geoai
 
 - root: `/Users/jinlin/Desktop/Project/explainable_geoai`

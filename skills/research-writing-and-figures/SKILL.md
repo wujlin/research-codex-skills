@@ -1,44 +1,20 @@
 ---
 name: research-writing-and-figures
-description: Use when drafting, rewriting, reviewing, or polishing scientific manuscript sections, captions, visual explanations, or research presentation text. This skill enforces a problem-driven narrative, consistent section roles, accurate terminology, figure-text alignment, and restrained scientific visual style across research projects.
+description: Use when a task genuinely spans both scientific writing and figure interpretation or requires caption-text alignment across a research project. Prefer `research-writing` for manuscript and digest text, and prefer `research-figure-analysis` for PDF figure extraction, panel-level explanation, and caption auditing.
 ---
 
-# Research Writing and Figures
+# Research Writing And Figures
 
-Use this skill when the task involves any of the following:
+Use this skill only when the task truly couples manuscript writing and figure work.
 
-- revising `Introduction`, `Methods`, `Results`, `Discussion`, `Abstract`, or title
-- tightening logic, removing repetition, or making scientific writing more problem-driven
-- checking terminology, abbreviations, data-source wording, condition definitions, or analysis units
-- revising figure captions or aligning figures with the main text
-- standardizing scientific figure style, panel roles, palette, labels, and export choices
-- turning research content into presentation language without breaking the core logic
+## Routing
 
-## Core workflow
+- For manuscript sections, reading notes, digests, scientific explanations, and logic tightening, use `research-writing`.
+- For PDF figure extraction, panel-level explanation, caption checking, and figure-text consistency, use `research-figure-analysis`.
+- Use this combined skill only when both are required in the same turn and the text depends directly on the figure reading.
 
-1. Identify the question the current section or figure is supposed to answer.
-2. Lead with the main point early and unfold the logic linearly; do not braid multiple threads into one paragraph by default.
-3. Separate background, design, evidence, and interpretation; do not mix them by default.
-4. Keep each paragraph focused on one function and each panel responsible for distinct information.
-5. Check terminology against the actual implementation and experiment design before polishing wording.
-6. Prefer concise, problem-driven writing and restrained figure design over decorative emphasis.
+## Shared references
 
-## Reference map
-
-- For collaboration norms, response style, and project workflow, read [references/workflow.md](references/workflow.md).
-- For manuscript structure, terminology, caption logic, and section-level revision rules, read [references/writing.md](references/writing.md).
-- For figure palette, panel layout, labels, legends, export, and visual restraint, read [references/visual-style.md](references/visual-style.md).
-
-## Task routing
-
-- If the user asks to rewrite or review manuscript text, load `references/writing.md` first.
-- If the user asks to improve a figure, caption, or slide visual, load `references/visual-style.md` first.
-- If the task spans writing, collaboration, and revision workflow, also load `references/workflow.md`.
-
-## Output defaults
-
-- Keep revisions concise and claim-driven.
-- Lead with the point, then add one layer at a time.
-- Let captions explain how to read the figure; keep interpretation in the main text.
-- Prefer one clear term per concept unless distinctions are explicit and necessary.
-- When converting research writing into presentation language, simplify wording but preserve the scientific point.
+- Writing rules: [references/writing.md](references/writing.md)
+- Figure style rules: [references/visual-style.md](references/visual-style.md)
+- Workflow norms: [references/workflow.md](references/workflow.md)

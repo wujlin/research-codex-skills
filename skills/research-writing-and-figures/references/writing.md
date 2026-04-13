@@ -16,6 +16,7 @@ If a sentence does not serve one of these functions, cut or rewrite it.
 - Start with the claim or question of the paragraph.
 - End with the take-home message, not a preview of the next section.
 - In English scientific writing, put the important point early and then unfold the support linearly.
+- Keep paragraph roles distinct. If one paragraph is trying to orient the subsection, define notation, justify a data choice, and interpret a result at the same time, it is overloaded.
 
 Avoid:
 
@@ -23,6 +24,40 @@ Avoid:
 - mixing figure reading, statistical results, and mechanism in one paragraph
 - piling up abstract nouns where a concrete phenomenon would do
 - thread-like writing that braids several partially related ideas before the reader knows the main point
+
+## Recall versus repetition
+
+Recall and repetition are not the same.
+
+- Use recall only after the earlier section or paragraph has already established the object, claim, or setup clearly.
+- A recall sentence should be brief and functional. Its job is to reactivate something the reader already knows because the current logic depends on it.
+- Repetition is a writing error. It occurs when the text restates earlier explanation with the same or similar language but does not advance the current argument.
+
+Practical test:
+
+1. Has the earlier text already explained this object or claim clearly enough on its own?
+2. Does the current sentence help the reader perform the next logical step?
+3. If the sentence is removed, does the local argument become harder to follow for a real reason, or does nothing change?
+
+If the answer to 1 and 2 is no, or 3 suggests no real loss, cut the sentence.
+
+Good recall:
+
+- "The Michigan results establish the regional full-joint benchmark. We now turn to external spatial validation in Detroit."
+
+Weak repetition:
+
+- Re-explaining what the Michigan benchmark measured after the benchmark subsection has already defined it.
+
+## Subsection openings
+
+Use the first paragraph of a subsection to cue the reader about the role of the subsection.
+
+- State the goal of the subsection.
+- Name the main objects, outputs, or questions that the subsection will develop.
+- Keep this opening paragraph short and functional.
+
+Do not use the opening paragraph to execute all of the subsection's content at once. Its job is orientation, not compression.
 
 ## Linear English exposition
 
@@ -32,6 +67,12 @@ Prefer this order:
 2. define the object being discussed
 3. explain how it works or how it is constructed
 4. give the reason, implication, or boundary
+
+Within a sentence or paragraph, prefer purpose before action when that improves emphasis and clarity:
+
+- "To represent the empirical regional distribution, we construct the target vector `p` from survey-weighted counts."
+
+This helps the reader understand why the operation matters before reading its mechanics.
 
 Do not default to a Chinese-style winding buildup where the reader must collect several hints before learning the point.
 
@@ -58,12 +99,15 @@ Weak pattern:
 - Describe actions, representations, and evaluation design.
 - Do not report results here.
 - Prefer verbs such as `construct`, `define`, `compare`, `estimate`, `evaluate`.
+- Let each method subsection solve a distinct problem, and let each paragraph play one local role in that sequence.
+- If a methods subsection begins abruptly, add a short opening paragraph that states the goal of the subsection and the main artifacts it produces.
 
 ### Results
 
 - Lead with the evidence.
 - Keep comparison objects explicit.
 - State what is being compared before interpreting the difference.
+- Do not use the main text to restate what each panel contains if the caption already does that. Use the text to tell the reader what patterns matter and why.
 
 ### Discussion
 
@@ -77,6 +121,8 @@ Weak pattern:
 - Distinguish scientific objects from computational objects when needed.
 - If the same object appears across sections, keep the same noun phrase unless you are making a real distinction.
 - If two expressions refer to the same thing, choose one as the default and remove the others.
+- In long-form scientific writing, do not vary noun phrases for stylistic freshness. Reuse the same term if the object is the same.
+- Treat apparent synonym variation as a possible source of confusion, not as a stylistic improvement.
 
 Examples of recurring distinctions:
 
@@ -92,6 +138,14 @@ Common failure mode:
 - a third says `control variable`
 
 If they all mean the same object, collapse them to one term and keep the symbol mapping stable.
+
+Another common failure mode:
+
+- one sentence says `PUMA-level vectors`
+- the next says `regional inputs`
+- a third says `vectors for each region`
+
+If these all refer to the same PUMA-level objects, keep the wording stable instead of rotating phrases.
 
 ## Step and stage structuring
 

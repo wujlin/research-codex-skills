@@ -1,0 +1,4 @@
+interface:
+  display_name: "YouTube Lecture Digest"
+  short_description: "Clean transcript, slides, and Chinese lecture notes."
+  default_prompt: "Use $youtube-lecture-digest to turn this research lecture into a cleaned transcript, curated slides, and an integrated Chinese study note."
