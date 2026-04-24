@@ -1,0 +1,6 @@
+interface:
+  display_name: "Research Map Image2"
+  short_description: "Generate expressive academic knowledge maps"
+  default_prompt: "Use $research-map-image2 to turn my confirmed reading trajectory into a clear academic map with image2."
+policy:
+  allow_implicit_invocation: true

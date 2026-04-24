@@ -89,6 +89,12 @@ The repository is organized into five layers so skills do not all try to solve t
   - local edit patterns for weak or flat model stages
   - visual object grammar for data, modules, states, and outputs
 
+- `research-map-image2`
+  - academic knowledge maps and reading-roadmap figures
+  - linearization from confirmed notes to image2-ready prompts
+  - target-path discipline for generated research-map images
+  - expressive memory-aid maps for research trajectories
+
 ## Installation
 
 Install a skill into `~/.codex/skills` with the built-in installer:
@@ -108,6 +114,7 @@ Available `<skill-name>` values in this repository:
 - `research-figure-analysis`
 - `research-writing`
 - `research-writing-and-figures`
+- `research-map-image2`
 - `scientific-figure-prompting`
 - `scientific-module-iconography`
 - `wsa-remote-ops`
